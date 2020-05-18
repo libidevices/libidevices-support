@@ -1,0 +1,7 @@
+.DS_Store
+*.o
+*.a
+*.lo
+*.la
+**/Makefile
+**/Makefile.in

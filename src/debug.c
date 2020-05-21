@@ -32,10 +32,8 @@
 #include <time.h>
 
 #include "debug.h"
-#include "libimobiledevice/libimobiledevice.h"
-#include "src/idevice.h"
 
-#ifndef STRIP_DEBUG_CODE
+#ifdef DEBUG
 #include "asprintf.h"
 #endif
 
@@ -97,7 +95,7 @@ void debug_info_real(const char *func, const char *file, int line, const char *f
 
 void debug_buffer(const char *data, const int length)
 {
-#ifndef STRIP_DEBUG_CODE
+#ifdef DEBUG
 	int i;
 	int j;
 	unsigned char c;
@@ -132,7 +130,7 @@ void debug_buffer(const char *data, const int length)
 
 void debug_buffer_to_file(const char *file, const char *data, const int length)
 {
-#ifndef STRIP_DEBUG_CODE
+#ifdef DEBUG
 	if (debug_level) {
 		FILE *f = fopen(file, "wb");
 		fwrite(data, 1, length, f);
@@ -144,7 +142,7 @@ void debug_buffer_to_file(const char *file, const char *data, const int length)
 
 void debug_plist_real(const char *func, const char *file, int line, plist_t plist)
 {
-#ifndef STRIP_DEBUG_CODE
+#ifdef DEBUG
 	if (!plist)
 		return;
 
@@ -159,7 +157,7 @@ void debug_plist_real(const char *func, const char *file, int line, plist_t plis
 	if (length <= MAX_PRINT_LEN)
 		debug_info_real(func, file, line, "printing %i bytes plist:\n%s", length, buffer);
 	else
-		debug_info_real(func, file, line, "supress printing %i bytes plist...\n", length);
+		debug_info_real(func, file, line, "suppress printing %i bytes plist...\n", length);
 
 	free(buffer);
 #endif

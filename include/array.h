@@ -211,10 +211,10 @@ bool array_contains_any_string(array_t array, array_t strings);
  */
 bool array_string_contains_any(array_t array, char* string);
 
-#ifndef STRIP_DEBUG_CODE
+#ifdef DEBUG
 void array_print_debug(char* name, array_t array);
 #else
-inline void array_print_debug(char* name, array_t array) {}
+void array_print_debug(char* name, array_t array);
 #endif
 
 #endif //IDEVICECOMMON_ARRAY_H

@@ -38,9 +38,6 @@
 
 #define MAC_EPOCH 978307200
 
-#ifndef HAVE_STPCPY
-char *stpcpy(char *s1, const char *s2);
-#endif
 char *string_concat(const char *str, ...);
 char *string_append(char *str, ...);
 char *string_build_path(const char *elem, ...);

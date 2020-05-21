@@ -3,5 +3,4 @@
 *.a
 *.lo
 *.la
-**/Makefile
-**/Makefile.in
+.idea/

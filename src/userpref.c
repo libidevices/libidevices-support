@@ -35,7 +35,6 @@
 #include <pwd.h>
 #endif
 #include <unistd.h>
-#include <usbmuxd.h>
 #ifdef HAVE_OPENSSL
 #include <openssl/bn.h>
 #include <openssl/pem.h>
@@ -59,6 +58,7 @@
 #include <libgen.h>
 #include <sys/stat.h>
 #include <errno.h>
+#include <usbmuxd.h>
 
 #ifdef WIN32
 #include <shlobj.h>

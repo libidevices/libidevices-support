@@ -203,7 +203,7 @@ bool array_string_contains_any(array_t array, char* string) {
     return false;
 }
 
-#ifndef STRIP_DEBUG_CODE
+#ifdef DEBUG
 void array_print_debug(char* name, array_t array) {
     if (array == NULL) {
         printf("%s = NULL\n", name);
@@ -224,4 +224,6 @@ void array_print_debug(char* name, array_t array) {
     }
     printf(" ] \n");
 }
+#else
+void array_print_debug(char* name, array_t array) {}
 #endif
